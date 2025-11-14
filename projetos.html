@@ -9,6 +9,11 @@
 <body>
     <header>
         <h1>Nome da ONG</h1>
+        <button class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
@@ -20,17 +25,32 @@
     <main>
         <section>
             <h2>Nossos Projetos</h2>
-            <img src="images/0002.jpg" alt="Placeholder Image">
-            <p>Espaço para listar e descrever sobre o projetos da ONG.</p>
-        </section>
-        <section>
-            <h2>Seja um Voluntário</h2>
-            <img src="images/0003.jpg" alt="Placeholder Image">
-            <p>Informações sobre como se tornar um voluntário.</p>
-        </section>
-        <section>
-            <h2>Faça uma Doação</h2>
-            <p>Instruções e informações sobre como fazer uma doação.</p>
+            <div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                
+                <div class="card">
+                    <img src="images/0002.jpg" alt="reservado para imagem">
+                    <div class="card-content">
+                        <h3>Projeto Alpha</h3>
+                        <p>Espaço para listar e descrever sobre o projetos da ONG.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/0003.jpg" alt="reservado para imagem">
+                    <div class="card-content">
+                        <h3>Seja um Voluntário</h3>
+                        <p>Informações sobre como se tornar um voluntário.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Faça uma Doação</h3>
+                        <p>Instruções e informações sobre como fazer uma doação.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
     <footer>

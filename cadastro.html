@@ -9,6 +9,11 @@
 <body>
     <header>
         <h1>Nome da ONG</h1>
+        <button class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
@@ -28,9 +33,9 @@
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" required>
                     <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
+                    <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
                     <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+                    <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="(00) 00000-0000">
                     <label for="nascimento">Data de Nascimento:</label>
                     <input type="date" id="nascimento" name="nascimento" required>
                     <label for="tipo">Tipo de Usuário:</label>
@@ -44,7 +49,7 @@
                 <fieldset>
                     <legend>Endereço</legend>
                     <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" required placeholder="00000-000">
+                    <input type="text" id="cep" name="cep" required pattern="\d{5}-\d{3}" placeholder="00000-000">
                     <label for="endereco">Endereço:</label>
                     <input type="text" id="endereco" name="endereco" required>
                     <label for="cidade">Cidade:</label>
@@ -56,6 +61,15 @@
             </form>
         </section>
     </main>
+
+    <div id="success-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Sucesso!</h2>
+            <p>Seus dados foram cadastrados com sucesso.</p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2025 Nome da ONG. Todos os direitos reservados.</p>
     </footer>
