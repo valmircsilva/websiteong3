@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            appContent.focus();
+
             // Update browser history
             if (pushState) {
                 history.pushState({ path: url }, '', url);
@@ -112,10 +114,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    // Theme Switcher Logic
+    const themeSwitcherButtons = document.querySelectorAll('.theme-switcher button');
+    const body = document.body;
+
+    const applyTheme = (theme) => {
+        body.setAttribute('data-theme', theme);
+        themeSwitcherButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-theme') === theme) {
+                btn.classList.add('active');
+            }
+        });
+        localStorage.setItem('theme', theme);
+    };
+
+    themeSwitcherButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const theme = button.getAttribute('data-theme');
+            applyTheme(theme);
+        });
+    });
+
+    // Apply saved theme on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+
+
     // Hamburger Menu Logic (moved from validation.js)
     if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
-            nav.classList.toggle('nav-open');
+            const isExpanded = nav.classList.toggle('nav-open');
+            hamburger.setAttribute('aria-expanded', isExpanded);
         });
     }
 

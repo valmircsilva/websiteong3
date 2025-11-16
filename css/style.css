@@ -10,8 +10,8 @@ DESIGN SYSTEM
     --color-primary: #0055A4;        /* Standard Blue */
     --color-primary-light: #418fde;      /* Light Blue */
     
-    --color-secondary-dark: #FF6600; /* Deep Orange */
-    --color-secondary: #FF9933;      /* Standard Orange */
+    --color-secondary-dark: #D95B00; /* Deep Orange */
+    --color-secondary: #F57C00;      /* Standard Orange */
     --color-secondary-light: #ffcc99;    /* Light Orange */
 
     --color-neutral-dark: #333333;   /* Almost Black */
@@ -464,4 +464,107 @@ MODAL COMPONENT
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+/*
+================================
+THEME SWITCHER
+================================
+*/
+
+.theme-switcher {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.theme-switcher button {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: var(--space-xs);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.theme-switcher button.active {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-white);
+}
+
+/*
+================================
+DARK THEME
+================================
+*/
+
+body[data-theme="dark"] {
+    --color-primary-dark: #90caf9;   /* Light Blue */
+    --color-primary: #64b5f6;        /* Standard Blue */
+    --color-primary-light: #42a5f5;      /* Deep Blue */
+    
+    --color-secondary-dark: #ffab40; /* Light Orange */
+    --color-secondary: #ff9100;      /* Standard Orange */
+    --color-secondary-light: #ff6d00;    /* Deep Orange */
+
+    --color-neutral-dark: #F5F5F5;   /* Off White */
+    --color-neutral-medium: #616161; /* Grey */
+    --color-neutral-light: #212121;  /* Almost Black */
+    --color-neutral-white: #121212;
+
+    --color-success: #81c784;
+    --color-danger: #e57373;
+    --color-warning: #ffd54f;
+}
+
+/*
+================================
+HIGH CONTRAST THEME
+================================
+*/
+
+body[data-theme="high-contrast"] {
+    --color-primary-dark: #000000;
+    --color-primary: #000000;
+    --color-primary-light: #000000;
+    
+    --color-secondary-dark: #000000;
+    --color-secondary: #000000;
+    --color-secondary-light: #000000;
+
+    --color-neutral-dark: #FFFFFF;
+    --color-neutral-medium: #FFFFFF;
+    --color-neutral-light: #000000;
+    --color-neutral-white: #FFFFFF;
+
+    --color-success: #000000;
+    --color-danger: #000000;
+    --color-warning: #000000;
+
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+body[data-theme="high-contrast"] a {
+    color: #FFFF00;
+}
+
+body[data-theme="high-contrast"] button,
+body[data-theme="high-contrast"] .btn,
+body[data-theme="high-contrast"] button[type="submit"] {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body[data-theme="high-contrast"] input,
+body[data-theme="high-contrast"] select {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body[data-theme="high-contrast"] .card {
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
 }
