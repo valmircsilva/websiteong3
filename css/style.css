@@ -302,6 +302,20 @@ form input:valid:not(:placeholder-shown) {
     border-color: var(--color-success);
 }
 
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+input.invalid {
+    border-color: red;
+}
+
+/* Existing styles */
+
 /* Cards */
 .card {
     background-color: var(--color-neutral-white);
