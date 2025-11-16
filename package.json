@@ -1,0 +1,37 @@
+{
+  "name": "gemini",
+  "version": "1.0.0",
+  "description": "Experiência Pratica 03",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify:css": "cleancss -o dist/css/style.css css/style.css",
+    "minify:js": "terser js/main.js -o dist/js/main.js -c -m",
+    "minify:html:index": "html-minifier index.html -o dist/index.html --remove-comments --collapse-whitespace",
+    "minify:html:cadastro": "html-minifier cadastro.html -o dist/cadastro.html --remove-comments --collapse-whitespace",
+    "minify:html:inicio": "html-minifier inicio.html -o dist/inicio.html --remove-comments --collapse-whitespace",
+    "minify:html:projetos": "html-minifier projetos.html -o dist/projetos.html --remove-comments --collapse-whitespace",
+    "minify:html": "npm-run-all --parallel minify:html:*",
+    "compress:images": "imagemin images/* --out-dir dist/images",
+    "build": "npm-run-all --parallel minify:css minify:js minify:html compress:images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valmircsilva/websiteong3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/valmircsilva/websiteong3/issues"
+  },
+  "homepage": "https://github.com/valmircsilva/websiteong3#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier": "^4.0.0",
+    "imagemin-cli": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "terser": "^5.44.1"
+  }
+}
